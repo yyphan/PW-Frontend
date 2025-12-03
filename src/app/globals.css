@@ -9,5 +9,10 @@
   --color-ide-fg: #d4d4d4;
   --color-ide-comment: #6a9955;
 
-  --font-mono: var(--font-mono); 
+  /* cursor animation */
+  --animate-soft-blink: soft-blink 1.2s ease-in-out infinite;
+  @keyframes soft-blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.1; } 
+  }
 }

@@ -1,6 +1,6 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import VarButton from "@/components/ui/VarButton";
 import Link from "next/link";
 import { getLangDict }from "@/lib/constDefine"
@@ -10,6 +10,7 @@ import { useParams } from 'next/navigation';
 export default function Navbar() {
   const pathname = usePathname();  
   const params = useParams();
+  const router = useRouter();
   
   const currentLang = params.lang as "en" | "cn" || "en";
   const langDict = getLangDict(currentLang);
@@ -23,6 +24,12 @@ export default function Navbar() {
       href: `/${currentLang}/reader`
     }
   ];
+
+  const switchLang = (newLang: string) => {
+    if (newLang === currentLang) return;
+    const newPath = pathname.replace(`/${currentLang}`, `/${newLang}`);
+    router.push(newPath);
+  };
 
   return (
     <header className="fixed top-0 left-0 w-full h-[60px] bg-ide-bg border-b border-ide-border z-50 font-mono text-sm sm:text-base">
@@ -66,15 +73,21 @@ export default function Navbar() {
         <div className="text-ide-fg flex items-center gap-1 text-xs sm:text-sm">
           <span className="text-zinc-500">[</span>
           
-          <button className="text-ide-string font-bold hover:brightness-110">
-            &apos;EN&apos;
-          </button>
+            <VarButton 
+              label="'EN'"
+              isActive={currentLang === "en"}
+              onClick={() => switchLang("en")}  
+              overrideClassName="text-sm"
+            />
           
           <span className="text-zinc-600">,</span>
           
-          <button className="text-zinc-500 hover:text-ide-string transition-colors">
-            &apos;CN&apos;
-          </button>
+          <VarButton 
+              label="'中文'" 
+              isActive={currentLang === "cn"}
+              onClick={() => switchLang("cn")}  
+              overrideClassName="text-sm"
+            />
           
           <span className="text-zinc-500">]</span>
         </div>

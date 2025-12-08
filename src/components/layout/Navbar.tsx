@@ -3,18 +3,24 @@
 import { usePathname } from "next/navigation";
 import VarButton from "@/components/ui/VarButton";
 import Link from "next/link";
+import { getLangDict }from "@/lib/constDefine"
+import { useParams } from 'next/navigation';
+
 
 export default function Navbar() {
-  const pathname = usePathname();
-
+  const pathname = usePathname();  
+  const params = useParams();
+  
+  const currentLang = params.lang as "en" | "cn" || "en";
+  const langDict = getLangDict(currentLang);
   const NavLinks = [
     {
-      label: "\"Techie\"",
-      href: "/",
+      label: `"${langDict.topic.techie}"`,
+      href: `/${currentLang}/techie`
     },
     {
-      label: "\"Reader\"",
-      href: "/reader",
+      label: `"${langDict.topic.reader}"`,
+      href: `/${currentLang}/reader`
     }
   ];
 

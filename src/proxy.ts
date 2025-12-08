@@ -11,7 +11,7 @@ export function proxy(request: NextRequest) {
   );
   if (pathnameHasLocale) return;
 
-  // defaulting to eninglish
+  // defaulting to english
   const locale = "en"; 
   request.nextUrl.pathname = `/${locale}${pathname}`;
   

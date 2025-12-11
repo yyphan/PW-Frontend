@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { JetBrains_Mono } from "next/font/google";
 import "../globals.css";
 import Navbar from "@/components/layout/Navbar";
+import BackGround from "@/components/layout/Background";
 
 const jetbrainsMono = JetBrains_Mono({ 
   subsets: ["latin"],
@@ -23,6 +24,8 @@ export default function RootLayout({
       <body
         className={`${jetbrainsMono.variable} font-mono bg-ide-bg text-ide-fg antialiased`}
       >
+        <BackGround />
+        
         <Navbar />
 
         <main className="pt-[100px] min-h-screen">

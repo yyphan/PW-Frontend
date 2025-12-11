@@ -1,10 +1,11 @@
+import SeriesCdrd from "@/components/ui/SeriesCard"
+
 export default function Home() {
     return (
       <div className="">
-        <main className="">
-          
-          
-        </main>
+        <SeriesCdrd />
+        <SeriesCdrd />
+
       </div>
     );
   }

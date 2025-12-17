@@ -130,7 +130,6 @@ main { max-width: 900px; margin: 0 auto; padding: 20px 20px 100px 20px; }
   --color-scrollbar-thumb-hover: #4f4f4f;
 }
 
-/* 使用原生 CSS @layer base */
 @layer base {
   ::-webkit-scrollbar {
     width: 10px;

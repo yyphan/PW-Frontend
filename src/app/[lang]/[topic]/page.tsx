@@ -12,7 +12,7 @@ export default async function Home({ params }: { params: Promise<Params> }) {
   const seriesList = (await getSeriesList(lang, topic)).series;
 
   return (
-    <div className="">
+    <div>
       {seriesList && seriesList.map((series, i) => (
         <SeriesCard
           key={i}

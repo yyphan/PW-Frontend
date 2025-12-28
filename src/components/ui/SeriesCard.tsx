@@ -26,7 +26,7 @@ export default function SeriesCard({ index, backgroundImgUrl, seriesSlug, title,
         <Link href={postLink} className="code-block">
             <div className="line-numbers">{index * 3 + 1}<br />{index * 3 + 2}<br />{index * 3 + 3}</div>
             <div className="code-content">
-                <div className="doc-comment text-ide-comment font-mono text-sm">
+                <div className="doc-comment text-ide-comment font-mono">
                     {description
                         .split(/\\n|\n/)
                         .map((line, index) => (
@@ -37,7 +37,9 @@ export default function SeriesCard({ index, backgroundImgUrl, seriesSlug, title,
                         ))}
                 </div>
 
-                <FeaturedTitle title={title} />
+                <div className="mt-2">
+                    <FeaturedTitle title={title} />
+                </div>
             </div>
             <div className="preview-window">
                 <Image src={backgroundImgUrl} alt="Cover" width={500} height={500} />

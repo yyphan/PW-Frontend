@@ -1,4 +1,4 @@
-export default function TechieTitle({title} : {title: string}) {
+export default function TechieTitle({ title }: { title: string }) {
     return (
         <div className="flex flex-wrap items-center gap-2">
             <span className="text-ide-keyword">const</span>

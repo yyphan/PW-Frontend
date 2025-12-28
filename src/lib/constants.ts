@@ -15,7 +15,7 @@ const langDictRecord: Record<Locale, LangDict> = {
         topic: { techie: "开发", reader: "读者" }
     }
 };
-  
+
 export const getLangDict = (lang: "en" | "cn") => {
     return langDictRecord[lang] || langDictRecord.en;
 };

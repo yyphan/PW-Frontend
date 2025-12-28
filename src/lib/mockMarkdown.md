@@ -1,5 +1,4 @@
 ---
-title: "Understanding Ray-Sphere Intersection"
 updatedAt: "2025-12-16"
 ---
 

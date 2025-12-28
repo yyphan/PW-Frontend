@@ -10,3 +10,9 @@ export type SeriesCardDto = {
     title: string;
     description: string;
 }
+
+export type PostDto = {
+    title: string;
+    updatedAt: string;
+    markdownContent: string;
+}

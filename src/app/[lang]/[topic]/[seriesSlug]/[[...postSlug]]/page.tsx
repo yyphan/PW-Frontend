@@ -15,7 +15,6 @@ type Props = {
 }
 
 export default async function PostPage({ params }: Props) {
-  const post = await getPost();
   const { lang, topic, seriesSlug, postSlugArr } = await params;
   let postSlug;
 
@@ -25,6 +24,8 @@ export default async function PostPage({ params }: Props) {
   } else {
     postSlug = postSlugArr[0];
   }
+
+  const post = await getPost(lang, seriesSlug, postSlug);
 
   return (
     <article className="max-w-[800px] mx-auto px-6 pb-20">
@@ -39,22 +40,22 @@ export default async function PostPage({ params }: Props) {
           {seriesSlug}
         </Link>
         <span>/</span>
-        <span className="text-ide-string">{postSlugArr}.md</span>
+        <span className="text-ide-string">{postSlug}.md</span>
       </div>
 
       <header className="mb-10">
         <h1 className="text-3xl md:text-4xl font-mono font-bold text-white mb-4">
-          {post.metadata.title}
+          {post.title}
         </h1>
 
         <div className="font-mono text-sm text-ide-comment flex flex-col sm:flex-row gap-2 sm:gap-6">
-          <span>// Last Updated: {post.metadata.updatedAt}</span>
+          <span>// Last Updated: {post.updatedAt}</span>
         </div>
       </header>
 
       <div className="min-h-[200px]">
         <MDXRemote
-          source={post.content}
+          source={post.markdownContent}
           components={MarkdownComponents}
         />
       </div>

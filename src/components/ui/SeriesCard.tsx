@@ -10,6 +10,7 @@ type Props = {
     title: string;
     description: string;
     topic: string;
+    lang: string;
 }
 
 const TitleRenderers: Record<string, React.FC<{ title: string }>> = {
@@ -17,12 +18,12 @@ const TitleRenderers: Record<string, React.FC<{ title: string }>> = {
     reader: ReaderTitle,
 };
 
-export default function SeriesCard({ index, backgroundImgUrl, seriesSlug, title, description, topic }: Props) {
+export default function SeriesCard({ index, backgroundImgUrl, seriesSlug, title, description, topic, lang }: Props) {
     const FeaturedTitle = TitleRenderers[topic] || TechieTitle;
-    console.log(`url: ${backgroundImgUrl}`);
+    const postLink = `/${lang}/${topic}/${seriesSlug}`;
 
     return (
-        <Link href="#" className="code-block">
+        <Link href={postLink} className="code-block">
             <div className="line-numbers">{index * 3 + 1}<br />{index * 3 + 2}<br />{index * 3 + 3}</div>
             <div className="code-content">
                 <div className="doc-comment text-ide-comment font-mono text-sm">

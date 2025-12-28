@@ -22,6 +22,7 @@ export default async function Home({ params }: { params: Promise<Params> }) {
           title={series.title}
           description={series.description}
           topic={topic}
+          lang={lang}
         />
       ))}
     </div>

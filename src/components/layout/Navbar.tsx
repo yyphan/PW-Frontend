@@ -53,7 +53,7 @@ export default function Navbar() {
                 <VarButton
                   label={item.label}
                   href={item.href}
-                  isActive={pathname === item.href}
+                  isActive={pathname.includes(item.href)}
                   overrideClassName="text-2xl"
                 />
 

@@ -1,5 +1,6 @@
 import { MarkdownComponents } from "@/components/markdown/markdownComponents";
 import { getPost } from "@/lib/api";
+import { getLangDict, Locale } from "@/lib/constants";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
 
@@ -49,7 +50,7 @@ export default async function PostPage({ params }: Props) {
         </h1>
 
         <div className="font-mono text-sm text-ide-comment flex flex-col sm:flex-row gap-2 sm:gap-6">
-          <span>// Last Updated: {post.updatedAt}</span>
+          <span>{getLangDict(lang as Locale).lastUpdatedStrInPost}: {post.updatedAt}</span>
         </div>
       </header>
 

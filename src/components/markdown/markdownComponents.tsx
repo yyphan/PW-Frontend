@@ -43,6 +43,8 @@ export const MarkdownComponents = {
     <p
       className={cn(
         "font-sans text-ide-fg leading-relaxed my-3 text-lg",
+        "text-justify",
+        "hyphens-auto",
         className
       )}
       {...props}
@@ -108,23 +110,47 @@ export const MarkdownComponents = {
     />
   ),
 
-  img: ({ className, alt, ...props }: any) => (
-    <figure className="my-8">
-      <img
-        className={cn(
-          "w-full h-auto border border-ide-border bg-black",
-          className
+  img: ({ className, alt, src, ...props }: any) => {
+    // src can come in for example `image.png?w=500&h=300`
+    let widthStr = undefined;
+    let heightStr = undefined;
+    let cleanSrc = src;
+
+    if (src && src.includes('?')) {
+      const [path, query] = src.split('?');
+      cleanSrc = path;
+
+      const params = new URLSearchParams(query);
+      widthStr = params.get('w');
+      heightStr = params.get('h');
+    }
+    const style: React.CSSProperties = {};
+    if (widthStr) style.width = `${widthStr}px`;
+    if (heightStr) style.height = `${heightStr}px`;
+
+    const isResized = widthStr || heightStr;
+
+    return (
+      <figure className={cn("my-8", isResized && "flex flex-col items-center")}>
+        <img
+          className={cn(
+            "h-auto border border-ide-border bg-black",
+            !isResized && "w-full",
+            className
+          )}
+          src={cleanSrc}
+          alt={alt}
+          style={style}
+          {...props}
+        />
+        {alt && (
+          <figcaption className="text-center font-mono text-xs text-gray-500 mt-2">
+            fig: {alt}
+          </figcaption>
         )}
-        alt={alt}
-        {...props}
-      />
-      {alt && (
-        <figcaption className="text-center font-mono text-xs text-gray-500 mt-2">
-          fig: {alt}
-        </figcaption>
-      )}
-    </figure>
-  ),
+      </figure>
+    );
+  },
 
   hr: ({ className, ...props }: any) => (
     <hr className={cn("my-6 border-ide-comment border-2", className)} {...props} />

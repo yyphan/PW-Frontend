@@ -3,6 +3,7 @@ import { getPost } from "@/lib/api";
 import { getLangDict, Locale } from "@/lib/constants";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import Link from "next/link";
+import remarkUnwrapImages from "remark-unwrap-images";
 
 type Params = {
   lang: string;
@@ -58,6 +59,11 @@ export default async function PostPage({ params }: Props) {
         <MDXRemote
           source={post.markdownContent}
           components={MarkdownComponents}
+          options={{
+            mdxOptions: {
+              remarkPlugins: [remarkUnwrapImages], // remove <p> if <figure> is the only child
+            },
+          }}
         />
       </div>
     </article>

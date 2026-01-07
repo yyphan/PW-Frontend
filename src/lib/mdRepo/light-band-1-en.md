@@ -14,8 +14,12 @@ This series of posts will introduce a few ways to implement this effect in Unity
 
 3. Use a program-generated light band in 2
 
+&nbsp;
 
-# Using a light band texture, move it across the surface of the object (UV space)
+This post is the first entry in the series. I will go through the 1st method - moving texture in UV space.
+
+
+# Method 1 (Moving Texture in UV Space)
 If you have a light band texture ready with you, the easiest way to implement is to sample it and apply it to the target object. By offsetting and rotating its UV, we can make the light band move however we want.
 
 ![Shine Line Tex](/images/2026/01/20260107-ShineLineTex.png?h=200)
@@ -57,4 +61,9 @@ The complete Shader Graph looks like this:
 
 Simple, isn't it? But good enough most of the time.
 
-However, due to the fact that it is bound to the target object's UV, it does have some limitations. If the target object's UV is not suitable, or if you don't want to render the light band on the back of the target object, you will need to consider other ways to implement it.
+However, due to the fact that everything here happens in UV space, it does have some limitations: 
+
+- UV's not suitable? 
+- Don't want to render the light band on the back of the target object?
+
+The rest of the posts in this series aim to address these limitations.

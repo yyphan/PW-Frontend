@@ -153,6 +153,6 @@ export const MarkdownComponents = {
   },
 
   hr: ({ className, ...props }: any) => (
-    <hr className={cn("my-6 border-ide-comment border-2", className)} {...props} />
+    <hr className={cn("my-6 border-ide-comment border-1", className)} {...props} />
   ),
 };

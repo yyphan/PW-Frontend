@@ -23,10 +23,10 @@ export default function SeriesCard({ index, backgroundImgUrl, seriesSlug, title,
     const postLink = `/${lang}/${topic}/${seriesSlug}`;
 
     return (
-        <Link href={postLink} className="code-block">
+        <Link href={postLink} className="code-block" style={{ height: "200px" }}>
             <div className="line-numbers">{index * 3 + 1}<br />{index * 3 + 2}<br />{index * 3 + 3}</div>
             <div className="code-content">
-                <div className="doc-comment text-ide-comment font-mono">
+                <div className="doc-comment text-ide-comment font-mono" style={{ marginTop: "calc(0.8rem * 1.5 * 2)" }}>
                     {description
                         .split(/\\n|\n/)
                         .map((line, index) => (
@@ -42,7 +42,7 @@ export default function SeriesCard({ index, backgroundImgUrl, seriesSlug, title,
                 </div>
             </div>
             <div className="preview-window">
-                <Image src={backgroundImgUrl} alt="Cover" width={500} height={500} />
+                <Image src={backgroundImgUrl} alt="Cover" fill className="object-contain" style={{ objectFit: "contain" }} />
             </div>
         </Link>
     );

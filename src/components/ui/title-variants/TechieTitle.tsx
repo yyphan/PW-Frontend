@@ -1,6 +1,6 @@
 export default function TechieTitle({ title }: { title: string }) {
     return (
-        <div className="flex flex-wrap items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2 text-2xl font-medium">
             <span className="text-ide-keyword">const</span>
             <span className="text-ide-var font-bold">Title</span>
             <span className="text-white">=</span>

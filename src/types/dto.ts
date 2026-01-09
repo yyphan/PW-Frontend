@@ -9,6 +9,7 @@ export type SeriesCardDto = {
     bgUrl: string;
     title: string;
     description: string;
+    postSlugs: string[];
 }
 
 export type PostDto = {

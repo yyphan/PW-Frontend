@@ -9,7 +9,7 @@ type Params = {
   lang: string;
   topic: string;
   seriesSlug: string;
-  postSlugArr?: string[];
+  postSlug?: string[];
 };
 
 type Props = {
@@ -17,17 +17,17 @@ type Props = {
 }
 
 export default async function PostPage({ params }: Props) {
-  const { lang, topic, seriesSlug, postSlugArr } = await params;
-  let postSlug;
+  const { lang, topic, seriesSlug, postSlug } = await params;
+  let finalPostSlug;
 
   // if only one post in series, the postSlug in URL is optional and if specified, should be 'index'
-  if (!postSlugArr || postSlugArr.length === 0) {
-    postSlug = "index";
+  if (!postSlug || postSlug.length === 0) {
+    finalPostSlug = "index";
   } else {
-    postSlug = postSlugArr[0];
+    finalPostSlug = postSlug[0];
   }
 
-  const post = await getPost(lang, seriesSlug, postSlug);
+  const post = await getPost(lang, seriesSlug, finalPostSlug);
 
   return (
     <article className="max-w-[800px] mx-auto px-6 pb-20">
@@ -42,7 +42,7 @@ export default async function PostPage({ params }: Props) {
           {seriesSlug}
         </Link>
         <span>/</span>
-        <span className="text-ide-string">{postSlug}.md</span>
+        <span className="text-ide-string">{finalPostSlug}.md</span>
       </div>
 
       <header className="mb-10">

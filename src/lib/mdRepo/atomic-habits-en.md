@@ -2,6 +2,8 @@
 
 ***
 
+![Atomic-Habits](/images/2026/01/20260110-Atomic-Habits.png?h=400)
+
 **Atomic Habits** by **James Clear** is a book about forming habits, which we never stop doing, consciously or unconsciously, since the day we were born. The book is therefore highly relatable. Hardly a chapter went by without me thinking "hey this had worked for me" or "now this might just work".
 
 Here are 15 points from this book I would constantly remind myself of:
@@ -12,27 +14,27 @@ Here are 15 points from this book I would constantly remind myself of:
 
 You can acquire a habit by assuming an identity. For example, it would be easier to quit smoking by saying 
 
-\`I am not a smoker\` 
+`I am not a smoker` 
 
 than
 
-\`I am quitting\`. 
+`I am quitting`. 
 
 > I assumed the identity of a Software Engineer and thus habits like listening to podcasts and doing side projects come natural to me.
 
-> My Game Dev journey also started with \`fake it til I make it\`. I would look at anything (not just game) from a game developer's perspective and the rest just came natural.
+> My Game Dev journey also started with `fake it til I make it`. I would look at anything (not just game) from a game developer's perspective and the rest just came natural.
 
 # 2. Start Small
-If you divide your goal into \`100\` small bits and improve \`1%\` in each bit, you will accumulate an enormous improvement.
+If you divide your goal into `100` small bits and improve `1%` in each bit, you will accumulate an enormous improvement.
 
 # 3. Be Loud and Clear
 A clear message anchors the behavior. 
 
-\`I will do 10 burpees after I shut my computer for lunch\` 
+`I will do 10 burpees after I shut my computer for lunch` 
 
 is a much clearer message than 
 
-\`I will exercise every day\`.
+`I will exercise every day`.
 
 # 4. Self-Control?
 
@@ -51,7 +53,7 @@ Pair the habits you want to have with the habits you already have (and love!).
 * Try to form a habit with people that already have something common with you
 
 # 7. Make it Easy
-Start your habit with \`x\` minutes and \`x\` minutes only. It should always be just below the point where it starts to feel like work.
+Start your habit with `x` minutes and `x` minutes only. It should always be just below the point where it starts to feel like work.
 
 > I am still half way but I found it much easier if I time myself to play and only play 30 minutes of piano every day.
 

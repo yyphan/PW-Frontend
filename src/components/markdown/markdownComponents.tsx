@@ -9,8 +9,9 @@ export const MarkdownComponents = {
   h1: ({ className, ...props }: any) => (
     <h1
       className={cn(
-        "font-mono text-3xl text-white mt-10 mb-6 pb-2 border-b border-ide-comment",
-        "before:content-['#_'] before:text-ide-comment",
+        "font-sans font-extrabold text-3xl sm:text-4xl text-white tracking-tight",
+        "mt-12 mb-6 pb-4 border-b border-dashed border-ide-comment",
+        "before:content-['#'] before:mr-2 before:text-ide-comment before:font-mono before:font-normal",
         className
       )}
       {...props}
@@ -20,8 +21,9 @@ export const MarkdownComponents = {
   h2: ({ className, ...props }: any) => (
     <h2
       className={cn(
-        "font-mono text-2xl text-gray-200 mt-12 mb-4",
-        "before:content-['##_'] before:text-ide-comment before:text-lg",
+        "font-sans font-bold text-2xl text-gray-100 tracking-tight",
+        "mt-10 mb-4",
+        "before:content-['##'] before:mr-2 before:text-ide-comment before:font-mono before:font-normal before:text-lg",
         className
       )}
       {...props}
@@ -31,8 +33,9 @@ export const MarkdownComponents = {
   h3: ({ className, ...props }: any) => (
     <h3
       className={cn(
-        "font-mono text-xl text-gray-300 mt-8 mb-3",
-        "before:content-['###_'] before:text-ide-comment before:text-base",
+        "font-sans font-semibold text-xl text-gray-200",
+        "mt-8 mb-3",
+        "before:content-['###'] before:mr-2 before:text-ide-comment before:font-mono before:font-normal before:text-base",
         className
       )}
       {...props}

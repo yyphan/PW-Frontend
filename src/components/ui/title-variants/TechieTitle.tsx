@@ -1,12 +1,12 @@
 export default function TechieTitle({ title }: { title: string }) {
     return (
-        <div className="flex flex-wrap items-center gap-2 text-2xl font-medium">
-            <span className="text-ide-keyword">const</span>
-            <span className="text-ide-var font-bold">Title</span>
-            <span className="text-white">=</span>
-            <span className="text-ide-string break-words">
+        <div className="flex flex-wrap items-center gap-2 text-3xl font-medium">
+            <span className="text-ide-keyword font-semibold">Build</span>
+            <span className="text-ide-fg">(</span>
+            <span className="text-ide-var break-words font-sans font-bold text-2xl sm:text-3xl tracking-tight leading-none decoration-clone shadow-none">
                 "{title}"
             </span>
+            <span className="text-ide-fg">)</span>
         </div>
     );
 }

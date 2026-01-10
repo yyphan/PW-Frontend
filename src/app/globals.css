@@ -63,6 +63,7 @@ main {
   --color-ide-var: #4ec9b0;
   --color-ide-string: #ce9178;
   --color-ide-fg: #d4d4d4;
+  --color-ide-func: #dcdcaa;
   --color-ide-comment: #6a9955;
 
   /* cursor animation */

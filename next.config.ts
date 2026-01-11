@@ -6,10 +6,20 @@ const nextConfig: NextConfig = {
     return [
       {
         source: '/images/:path*',
-        destination: 'http://localhost:8080/images/:path*',
+        destination: 'https://api.yyphan.com/images/:path*',
       },
     ]
   },
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'api.yyphan.com',
+      },
+    ],
+  },
+
   reactCompiler: true,
 };
 

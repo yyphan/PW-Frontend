@@ -41,7 +41,7 @@ export default function Navbar() {
           <div className="flex items-center gap-2 sm:gap-3 text-xl sm:text-3xl w-full sm:w-auto">
             <span className="text-ide-keyword">var</span>
             <Link
-              href="/"
+              href={`/${currentLang}/techie`}
               className="text-ide-var font-bold cursor-pointer"
             >
               YaoYifan

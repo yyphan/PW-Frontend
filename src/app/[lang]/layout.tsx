@@ -4,7 +4,7 @@ import "../globals.css";
 import Navbar from "@/components/layout/Navbar";
 import BackGround from "@/components/layout/Background";
 
-const jetbrainsMono = JetBrains_Mono({ 
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
 });
@@ -25,10 +25,10 @@ export default function RootLayout({
         className={`${jetbrainsMono.variable} font-mono bg-ide-bg text-ide-fg antialiased`}
       >
         <BackGround />
-        
+
         <Navbar />
 
-        <main className="pt-[100px] min-h-screen">
+        <main className="mt-[150px] sm:mt-[100px] min-h-screen">
           {children}
         </main>
       </body>

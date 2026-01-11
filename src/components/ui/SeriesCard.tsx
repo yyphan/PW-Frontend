@@ -28,7 +28,7 @@ export default function SeriesCard({ index, backgroundImgUrl, seriesSlug, title,
     }
 
     return (
-        <Link href={postLink} className="code-block" style={{ height: "200px" }}>
+        <Link href={postLink} className="code-block h-auto md:h-[200px]" >
             <div className="line-numbers">{index * 3 + 1}<br />{index * 3 + 2}<br />{index * 3 + 3}</div>
             <div className="code-content">
                 <div className="doc-comment text-ide-comment font-mono" style={{ marginTop: "calc(0.8rem * 1.5 * 2)" }}>

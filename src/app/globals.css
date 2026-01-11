@@ -12,8 +12,14 @@ body {
   background-color: var(--bg-deep);
   color: #d4d4d4;
   font-family: var(--font-code);
-  padding-top: 80px;
+  padding-top: 120px;
   overflow-x: hidden;
+}
+
+@media (min-width: 640px) {
+  body {
+    padding-top: 80px;
+  }
 }
 
 .bg-noise {
